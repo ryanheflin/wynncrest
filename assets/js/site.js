@@ -37,6 +37,18 @@ function initMenu() {
   });
 }
 
+function initStickyNav() {
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
+
+  const updateNav = () => {
+    nav.classList.toggle("nav-scrolled", window.scrollY > 28);
+  };
+
+  updateNav();
+  window.addEventListener("scroll", updateNav, { passive: true });
+}
+
 function initReveal() {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
@@ -92,6 +104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   initYear();
   initMenu();
+  initStickyNav();
   initReveal();
   initEmailForms();
 });
