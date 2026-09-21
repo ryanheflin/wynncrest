@@ -521,7 +521,7 @@
           rgba(0,0,0,0.02),
           rgba(0,0,0,0.20)
         ),
-        url("/assets/images/wynncrest-hero.jpg");
+        url("/assets/images/wynncrest-hero.png");
 
       background-size: cover;
 
@@ -801,7 +801,7 @@
           rgba(0,0,0,0.50),
           rgba(0,0,0,0.07)
         ),
-        url("/assets/images/wynncrest-craft.jpg");
+        url("/assets/images/wynncrest-craft.png");
 
       background-size: cover;
 
@@ -1213,7 +1213,7 @@
       background-color: #aaa193;
 
       background-image:
-        url("/assets/images/wynncrest-books.jpg");
+        url("/assets/images/wynncrest-books.png");
 
       background-size: cover;
 
