@@ -276,9 +276,9 @@
 
       width: auto;
 
-      height: 66px;
+      height: 70px;
 
-      max-width: 285px;
+      max-width: 300px;
 
       object-fit: contain;
 
@@ -1642,10 +1642,10 @@
       .logo img {
 
         height:
-          52px;
+          56px;
 
         max-width:
-          225px;
+          240px;
 
         background:
           transparent;
