@@ -284,7 +284,7 @@
 
       background: transparent;
 
-      mix-blend-mode: multiply;
+      mix-blend-mode: normal;
     }
 
 
@@ -1651,7 +1651,7 @@
           transparent;
 
         mix-blend-mode:
-          multiply;
+          normal;
       }
 
 
