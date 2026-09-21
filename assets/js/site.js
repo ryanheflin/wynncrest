@@ -58,6 +58,32 @@ function initReveal() {
   items.forEach(item => observer.observe(item));
 }
 
+function initEmailForms() {
+  document.querySelectorAll("form[data-email-form]").forEach(form => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const subject = form.dataset.emailSubject || "Wynncrest Books Inquiry";
+      const data = new FormData(form);
+      const lines = [];
+
+      for (const [name, value] of data.entries()) {
+        const cleanValue = String(value).trim();
+        if (cleanValue) lines.push(`${name}: ${cleanValue}`);
+      }
+
+      const body = lines.join("\n\n");
+      const mailto =
+        "mailto:liz@lizheflin.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
     loadComponent("#site-header", "/components/header.html"),
@@ -67,4 +93,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   initYear();
   initMenu();
   initReveal();
+  initEmailForms();
 });
