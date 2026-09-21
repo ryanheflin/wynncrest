@@ -2602,3 +2602,31 @@
     min-height: 470px;
   }
 }
+
+
+/* Airtable form embed */
+.airtable-form-panel {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  border-color: var(--line);
+}
+
+.wynncrest-airtable-form {
+  display: block;
+  width: 100%;
+  min-height: 533px;
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 760px) {
+  .airtable-form-panel {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  .wynncrest-airtable-form {
+    min-height: 590px;
+  }
+}
