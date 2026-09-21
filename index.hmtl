@@ -1,0 +1,3245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Wynncrest Books | Independent Publishing
+  </title>
+
+  <meta
+    name="description"
+    content="Wynncrest Books partners with founders, executives, experts, authors, and organizations to develop and publish exceptional books."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    /* =========================================================
+       WYNNCREST BOOKS
+       MASTER DESIGN SYSTEM
+    ========================================================== */
+
+    :root {
+
+      --ink: #171715;
+      --ink-soft: #44413c;
+
+      --cream: #f4efe5;
+      --cream-light: #faf8f3;
+      --paper: #ebe4d8;
+
+      --gold: #a48959;
+      --gold-dark: #806941;
+
+      --white: #ffffff;
+
+      --line: rgba(23, 23, 21, 0.14);
+
+      --serif:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      --sans:
+        "Inter",
+        Arial,
+        sans-serif;
+
+      --max:
+        1280px;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family: var(--sans);
+
+      background: var(--cream-light);
+      color: var(--ink);
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================== */
+
+    .container {
+
+      width: min(
+        calc(100% - 48px),
+        var(--max)
+      );
+
+      margin: 0 auto;
+    }
+
+
+    .eyebrow {
+
+      font-size: 0.69rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+
+      color: var(--gold-dark);
+    }
+
+
+    .section-title {
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        2.8rem,
+        5.5vw,
+        5rem
+      );
+
+      font-weight: 500;
+
+      line-height: 0.98;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .section-copy {
+
+      color: var(--ink-soft);
+
+      font-size: 0.96rem;
+
+      font-weight: 300;
+
+      line-height: 1.85;
+    }
+
+
+    /* =========================================================
+       BUTTONS
+    ========================================================== */
+
+    .button {
+
+      min-height: 52px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 13px;
+
+      padding: 0 26px;
+
+      border: 1px solid var(--ink);
+
+      background: var(--ink);
+
+      color: white;
+
+      font-size: 0.79rem;
+
+      font-weight: 500;
+
+      letter-spacing: 0.055em;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+
+    .button:hover {
+
+      background: transparent;
+
+      color: var(--ink);
+
+      transform: translateY(-2px);
+    }
+
+
+    .button-light {
+
+      border-color: white;
+
+      background: white;
+
+      color: var(--ink);
+    }
+
+
+    .button-light:hover {
+
+      background: transparent;
+
+      color: white;
+    }
+
+
+    .arrow {
+
+      font-size: 1.05rem;
+
+      transition:
+        transform 0.25s ease;
+    }
+
+
+    .button:hover .arrow {
+
+      transform: translateX(4px);
+    }
+
+
+    .text-link {
+
+      display: inline-block;
+
+      padding-bottom: 4px;
+
+      border-bottom:
+        1px solid var(--ink);
+
+      font-size: 0.79rem;
+
+      font-weight: 500;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================== */
+
+    .nav {
+
+      height: 96px;
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 100;
+
+      display: flex;
+
+      align-items: center;
+    }
+
+
+    .nav-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+
+    .logo {
+
+      display: flex;
+
+      align-items: center;
+    }
+
+
+    .logo img {
+
+      width: auto;
+
+      height: 52px;
+
+      max-width: 230px;
+
+      object-fit: contain;
+    }
+
+
+    .logo-fallback {
+
+      display: none;
+
+      font-family: var(--serif);
+
+      font-size: 1.65rem;
+
+      font-weight: 600;
+
+      line-height: 1;
+
+      letter-spacing: 0.01em;
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 31px;
+
+      font-size: 0.76rem;
+
+      font-weight: 500;
+
+      letter-spacing: 0.035em;
+    }
+
+
+    .nav-links > a:not(.nav-cta) {
+
+      position: relative;
+    }
+
+
+    .nav-links > a:not(.nav-cta)::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -5px;
+
+      width: 0;
+
+      height: 1px;
+
+      background: var(--ink);
+
+      transition:
+        width 0.25s ease;
+    }
+
+
+    .nav-links > a:hover::after {
+
+      width: 100%;
+    }
+
+
+    .nav-cta {
+
+      padding: 12px 18px;
+
+      border:
+        1px solid var(--ink);
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+
+    .nav-cta:hover {
+
+      background: var(--ink);
+
+      color: white;
+    }
+
+
+    .menu-button {
+
+      display: none;
+
+      padding: 7px;
+
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+
+    .menu-button span {
+
+      display: block;
+
+      width: 25px;
+
+      height: 1px;
+
+      margin: 6px 0;
+
+      background: var(--ink);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================== */
+
+    .hero {
+
+      min-height: 850px;
+
+      display: grid;
+
+      grid-template-columns:
+        56% 44%;
+
+      padding-top: 96px;
+
+      background: var(--cream);
+    }
+
+
+    .hero-copy {
+
+      display: flex;
+
+      align-items: center;
+    }
+
+
+    .hero-inner {
+
+      width: min(
+        calc(100% - 48px),
+        715px
+      );
+
+      margin-left: max(
+        24px,
+        calc(
+          (100vw - var(--max)) / 2
+        )
+      );
+
+      padding:
+        90px 58px
+        90px 0;
+    }
+
+
+    .hero .eyebrow {
+
+      margin-bottom: 28px;
+    }
+
+
+    .hero h1 {
+
+      max-width: 760px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        4.2rem,
+        7vw,
+        7.5rem
+      );
+
+      font-weight: 500;
+
+      line-height: 0.87;
+
+      letter-spacing: -0.047em;
+    }
+
+
+    .hero h1 em {
+
+      color: var(--gold-dark);
+
+      font-weight: 400;
+    }
+
+
+    .hero-description {
+
+      max-width: 570px;
+
+      margin-top: 38px;
+
+      color: var(--ink-soft);
+
+      font-size: 1rem;
+
+      font-weight: 300;
+
+      line-height: 1.85;
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+      margin-top: 42px;
+    }
+
+
+    .hero-image {
+
+      position: relative;
+
+      min-height: 754px;
+
+      overflow: hidden;
+
+      background-color: #c6b9a6;
+
+      background-image:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0.02),
+          rgba(0,0,0,0.20)
+        ),
+        url("assets/images/wynncrest-hero.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+
+    .hero-image-caption {
+
+      position: absolute;
+
+      bottom: 36px;
+
+      left: 38px;
+
+      right: 38px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding-top: 17px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.50);
+
+      color: white;
+
+      font-size: 0.63rem;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       POSITIONING BAR
+    ========================================================== */
+
+    .positioning {
+
+      background: var(--ink);
+
+      color: white;
+
+      padding: 38px 0;
+    }
+
+
+    .positioning-inner {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 40px;
+    }
+
+
+    .positioning-item {
+
+      text-align: center;
+    }
+
+
+    .positioning-item + .positioning-item {
+
+      border-left:
+        1px solid
+        rgba(255,255,255,0.14);
+    }
+
+
+    .positioning-item strong {
+
+      display: block;
+
+      margin-bottom: 6px;
+
+      font-family: var(--serif);
+
+      font-size: 1.8rem;
+
+      font-weight: 400;
+    }
+
+
+    .positioning-item span {
+
+      color:
+        rgba(255,255,255,0.54);
+
+      font-size: 0.64rem;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       INTRODUCTION
+    ========================================================== */
+
+    .intro {
+
+      padding: 145px 0;
+    }
+
+
+    .intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1.1fr;
+
+      gap: 130px;
+
+      align-items: start;
+    }
+
+
+    .intro .eyebrow {
+
+      margin-bottom: 22px;
+    }
+
+
+    .intro-text {
+
+      padding-top: 40px;
+    }
+
+
+    .intro-text p + p {
+
+      margin-top: 22px;
+    }
+
+
+    /* =========================================================
+       AUDIENCE
+    ========================================================== */
+
+    .audience {
+
+      padding:
+        135px 0;
+
+      background:
+        var(--cream);
+    }
+
+
+    .audience-head {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+
+      margin-bottom: 80px;
+    }
+
+
+    .audience-head .eyebrow {
+
+      margin-bottom: 20px;
+    }
+
+
+    .audience-copy {
+
+      align-self: end;
+    }
+
+
+    .audience-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .audience-card {
+
+      min-height: 280px;
+
+      padding:
+        34px 34px
+        34px 0;
+    }
+
+
+    .audience-card + .audience-card {
+
+      padding-left: 34px;
+
+      border-left:
+        1px solid var(--line);
+    }
+
+
+    .audience-number {
+
+      display: block;
+
+      margin-bottom: 75px;
+
+      color: var(--gold-dark);
+
+      font-size: 0.65rem;
+
+      letter-spacing: 0.15em;
+    }
+
+
+    .audience-card h3 {
+
+      margin-bottom: 14px;
+
+      font-family: var(--serif);
+
+      font-size: 1.75rem;
+
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+
+    .audience-card p {
+
+      color: var(--ink-soft);
+
+      font-size: 0.84rem;
+
+      font-weight: 300;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================================================
+       IMAGE STATEMENT
+    ========================================================== */
+
+    .image-statement {
+
+      height: 650px;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: end;
+
+      background-color: #8f887d;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,0.50),
+          rgba(0,0,0,0.07)
+        ),
+        url("assets/images/wynncrest-craft.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+
+    .image-statement-inner {
+
+      padding-bottom: 70px;
+
+      color: white;
+    }
+
+
+    .image-statement h2 {
+
+      max-width: 780px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3rem,
+        5.5vw,
+        5.7rem
+      );
+
+      font-weight: 400;
+
+      line-height: 0.96;
+
+      letter-spacing: -0.032em;
+    }
+
+
+    .image-statement p {
+
+      max-width: 540px;
+
+      margin-top: 28px;
+
+      color:
+        rgba(255,255,255,0.72);
+
+      font-size: 0.92rem;
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       DIFFERENCE
+    ========================================================== */
+
+    .difference {
+
+      padding:
+        145px 0;
+    }
+
+
+    .difference-head {
+
+      max-width: 750px;
+
+      margin-bottom: 80px;
+    }
+
+
+    .difference-head .eyebrow {
+
+      margin-bottom: 20px;
+    }
+
+
+    .difference-list {
+
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .difference-row {
+
+      display: grid;
+
+      grid-template-columns:
+        90px 0.75fr 1.25fr;
+
+      gap: 50px;
+
+      padding:
+        38px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .difference-number {
+
+      color: var(--gold-dark);
+
+      font-family: var(--serif);
+
+      font-size: 1.5rem;
+    }
+
+
+    .difference-row h3 {
+
+      font-family: var(--serif);
+
+      font-size: 2rem;
+
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+
+    .difference-row p {
+
+      max-width: 610px;
+
+      color: var(--ink-soft);
+
+      font-size: 0.89rem;
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================== */
+
+    .process {
+
+      padding:
+        145px 0;
+
+      background: var(--ink);
+
+      color: white;
+    }
+
+
+    .process-head {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 100px;
+
+      margin-bottom: 80px;
+    }
+
+
+    .process .eyebrow {
+
+      margin-bottom: 20px;
+
+      color: #c8ab78;
+    }
+
+
+    .process-copy {
+
+      align-self: end;
+
+      color:
+        rgba(255,255,255,0.59);
+
+      font-size: 0.94rem;
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+
+    .process-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.17);
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,0.17);
+    }
+
+
+    .process-step {
+
+      min-height: 330px;
+
+      padding:
+        34px 30px
+        34px 0;
+    }
+
+
+    .process-step + .process-step {
+
+      padding-left: 30px;
+
+      border-left:
+        1px solid
+        rgba(255,255,255,0.17);
+    }
+
+
+    .process-number {
+
+      display: block;
+
+      margin-bottom: 75px;
+
+      color: #c8ab78;
+
+      font-size: 0.64rem;
+
+      letter-spacing: 0.15em;
+    }
+
+
+    .process-step h3 {
+
+      margin-bottom: 17px;
+
+      font-family: var(--serif);
+
+      font-size: 1.75rem;
+
+      font-weight: 400;
+    }
+
+
+    .process-step p {
+
+      color:
+        rgba(255,255,255,0.58);
+
+      font-size: 0.82rem;
+
+      font-weight: 300;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================== */
+
+    .services {
+
+      padding:
+        145px 0;
+
+      background:
+        var(--cream-light);
+    }
+
+
+    .services-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        0.78fr 1.22fr;
+
+      gap: 130px;
+    }
+
+
+    .services-copy {
+
+      position: sticky;
+
+      top: 60px;
+
+      align-self: start;
+    }
+
+
+    .services-copy .eyebrow {
+
+      margin-bottom: 20px;
+    }
+
+
+    .services-copy p {
+
+      max-width: 470px;
+
+      margin-top: 28px;
+    }
+
+
+    .services-list {
+
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .service {
+
+      padding:
+        29px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .service-head {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      gap: 25px;
+    }
+
+
+    .service h3 {
+
+      font-family: var(--serif);
+
+      font-size: 1.8rem;
+
+      font-weight: 500;
+    }
+
+
+    .service span {
+
+      color: var(--gold-dark);
+
+      font-size: 0.65rem;
+
+      letter-spacing: 0.15em;
+    }
+
+
+    .service p {
+
+      max-width: 600px;
+
+      margin-top: 14px;
+
+      color: var(--ink-soft);
+
+      font-size: 0.85rem;
+
+      font-weight: 300;
+
+      line-height: 1.75;
+    }
+
+
+    /* =========================================================
+       MISSION
+    ========================================================== */
+
+    .mission {
+
+      padding:
+        145px 0;
+
+      background:
+        var(--cream);
+    }
+
+
+    .mission-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 110px;
+
+      align-items: center;
+    }
+
+
+    .mission-image {
+
+      min-height: 600px;
+
+      background-color: #aaa193;
+
+      background-image:
+        url("assets/images/wynncrest-books.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+
+    .mission-copy {
+
+      max-width: 540px;
+    }
+
+
+    .mission-copy .eyebrow {
+
+      margin-bottom: 22px;
+    }
+
+
+    .mission-copy p {
+
+      margin-top: 30px;
+    }
+
+
+    .mission-quote {
+
+      margin-top: 40px;
+
+      padding-top: 30px;
+
+      border-top:
+        1px solid var(--line);
+
+      font-family: var(--serif);
+
+      font-size: 1.65rem;
+
+      font-weight: 400;
+
+      line-height: 1.3;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+    ========================================================== */
+
+    .experience {
+
+      padding:
+        105px 0;
+    }
+
+
+    .experience-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr 1fr;
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .experience-item {
+
+      padding:
+        42px 35px
+        42px 0;
+    }
+
+
+    .experience-item +
+    .experience-item {
+
+      padding-left: 35px;
+
+      border-left:
+        1px solid var(--line);
+    }
+
+
+    .experience-item strong {
+
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-family: var(--serif);
+
+      font-size: 3rem;
+
+      font-weight: 400;
+
+      line-height: 1;
+    }
+
+
+    .experience-item h3 {
+
+      margin-bottom: 10px;
+
+      font-family: var(--serif);
+
+      font-size: 1.4rem;
+
+      font-weight: 500;
+    }
+
+
+    .experience-item p {
+
+      color: var(--ink-soft);
+
+      font-size: 0.82rem;
+
+      font-weight: 300;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+    ========================================================== */
+
+    .final-cta {
+
+      padding:
+        145px 0;
+
+      background: var(--ink);
+
+      color: white;
+
+      text-align: center;
+    }
+
+
+    .final-cta .eyebrow {
+
+      color: #c8ab78;
+
+      margin-bottom: 24px;
+    }
+
+
+    .final-cta h2 {
+
+      max-width: 850px;
+
+      margin:
+        0 auto;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3.2rem,
+        6vw,
+        6rem
+      );
+
+      font-weight: 400;
+
+      line-height: 0.94;
+
+      letter-spacing: -0.035em;
+    }
+
+
+    .final-cta p {
+
+      max-width: 620px;
+
+      margin:
+        30px auto 38px;
+
+      color:
+        rgba(255,255,255,0.62);
+
+      font-size: 0.92rem;
+
+      font-weight: 300;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================== */
+
+    footer {
+
+      padding:
+        55px 0;
+
+      background: #10100f;
+
+      color: white;
+    }
+
+
+    .footer-top {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr auto;
+
+      gap: 50px;
+
+      align-items: start;
+    }
+
+
+    .footer-brand {
+
+      font-family: var(--serif);
+
+      font-size: 1.65rem;
+    }
+
+
+    .footer-tag {
+
+      margin-top: 7px;
+
+      color:
+        rgba(255,255,255,0.40);
+
+      font-size: 0.64rem;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 27px;
+
+      color:
+        rgba(255,255,255,0.61);
+
+      font-size: 0.73rem;
+    }
+
+
+    .footer-bottom {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-top: 45px;
+
+      padding-top: 25px;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.10);
+
+      color:
+        rgba(255,255,255,0.33);
+
+      font-size: 0.66rem;
+    }
+
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(24px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================================================
+       TABLET
+    ========================================================== */
+
+    @media
+    (max-width: 1000px) {
+
+      .hero {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .hero-inner {
+
+        width:
+          min(
+            calc(100% - 48px),
+            760px
+          );
+
+        margin:
+          0 auto;
+
+        padding:
+          140px 0
+          90px;
+      }
+
+
+      .hero-image {
+
+        min-height:
+          620px;
+      }
+
+
+      .intro-grid,
+      .mission-grid,
+      .services-layout {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 60px;
+      }
+
+
+      .services-copy {
+
+        position:
+          static;
+      }
+
+
+      .process-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+
+      .process-step:nth-child(3) {
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.17);
+      }
+
+
+      .process-step:nth-child(4) {
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.17);
+      }
+
+
+      .mission-image {
+
+        min-height:
+          520px;
+      }
+
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================== */
+
+    @media
+    (max-width: 760px) {
+
+      .container {
+
+        width:
+          calc(100% - 36px);
+      }
+
+
+      .nav {
+
+        height:
+          78px;
+      }
+
+
+      .logo img {
+
+        height:
+          41px;
+
+        max-width:
+          180px;
+      }
+
+
+      .menu-button {
+
+        display:
+          block;
+      }
+
+
+      .nav-links {
+
+        display:
+          none;
+
+        position:
+          absolute;
+
+        top: 78px;
+
+        left: 18px;
+
+        right: 18px;
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+        gap: 0;
+
+        padding:
+          15px 22px;
+
+        background:
+          var(--cream-light);
+
+        border:
+          1px solid var(--line);
+
+        box-shadow:
+          0 12px 30px
+          rgba(0,0,0,0.08);
+      }
+
+
+      .nav-links.open {
+
+        display:
+          flex;
+      }
+
+
+      .nav-links a {
+
+        padding:
+          13px 0;
+      }
+
+
+      .nav-cta {
+
+        margin:
+          8px 0;
+
+        text-align:
+          center;
+      }
+
+
+      .hero {
+
+        min-height:
+          0;
+
+        padding-top:
+          78px;
+      }
+
+
+      .hero-inner {
+
+        width:
+          calc(100% - 36px);
+
+        padding:
+          90px 0
+          75px;
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(
+            3.8rem,
+            17vw,
+            5.5rem
+          );
+      }
+
+
+      .hero-description {
+
+        font-size:
+          0.92rem;
+      }
+
+
+      .hero-actions {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+        gap:
+          22px;
+      }
+
+
+      .hero-image {
+
+        min-height:
+          480px;
+      }
+
+
+      .hero-image-caption {
+
+        left:
+          20px;
+
+        right:
+          20px;
+
+        bottom:
+          20px;
+      }
+
+
+      .positioning-inner {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          0;
+      }
+
+
+      .positioning-item {
+
+        padding:
+          20px 0;
+      }
+
+
+      .positioning-item +
+      .positioning-item {
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.14);
+      }
+
+
+      .intro,
+      .audience,
+      .difference,
+      .process,
+      .services,
+      .mission,
+      .final-cta {
+
+        padding:
+          95px 0;
+      }
+
+
+      .audience-head,
+      .process-head {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          35px;
+      }
+
+
+      .audience-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .audience-card,
+      .audience-card +
+      .audience-card {
+
+        min-height:
+          0;
+
+        padding:
+          30px 0;
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          var(--line);
+      }
+
+
+      .audience-card:first-child {
+
+        border-top:
+          none;
+      }
+
+
+      .audience-number {
+
+        margin-bottom:
+          30px;
+      }
+
+
+      .image-statement {
+
+        height:
+          560px;
+      }
+
+
+      .difference-row {
+
+        grid-template-columns:
+          42px 1fr;
+
+        gap:
+          18px;
+      }
+
+
+      .difference-row p {
+
+        grid-column:
+          2;
+      }
+
+
+      .process-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .process-step,
+      .process-step +
+      .process-step {
+
+        min-height:
+          0;
+
+        padding:
+          30px 0;
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          rgba(255,255,255,0.17);
+      }
+
+
+      .process-step:first-child {
+
+        border-top:
+          none;
+      }
+
+
+      .process-number {
+
+        margin-bottom:
+          30px;
+      }
+
+
+      .experience-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .experience-item,
+      .experience-item +
+      .experience-item {
+
+        padding:
+          32px 0;
+
+        border-left:
+          none;
+
+        border-top:
+          1px solid
+          var(--line);
+      }
+
+
+      .experience-item:first-child {
+
+        border-top:
+          none;
+      }
+
+
+      .footer-top,
+      .footer-bottom {
+
+        display:
+          block;
+      }
+
+
+      .footer-links {
+
+        flex-wrap:
+          wrap;
+
+        margin-top:
+          28px;
+      }
+
+
+      .footer-bottom div +
+      div {
+
+        margin-top:
+          10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <nav class="nav">
+
+    <div class="container nav-inner">
+
+
+      <a
+        href="#"
+        class="logo"
+        aria-label="Wynncrest Books"
+      >
+
+        <img
+          src="assets/images/wynncrest-logo.png"
+          alt="Wynncrest Books"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='block';
+          "
+        >
+
+        <span class="logo-fallback">
+          Wynncrest Books
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <div
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="#publish">
+          Publish With Us
+        </a>
+
+        <a href="#books">
+          Our Books
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-cta"
+        >
+          Start Your Project
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <header class="hero">
+
+    <div class="hero-copy">
+
+      <div class="hero-inner reveal">
+
+        <div class="eyebrow">
+          Independent Publishing
+        </div>
+
+
+        <h1>
+          Important ideas deserve
+          <em>exceptional books.</em>
+        </h1>
+
+
+        <p class="hero-description">
+
+          Wynncrest Books partners with founders,
+          executives, experts, authors, and organizations
+          to develop and publish books of lasting value.
+
+          From the first idea to the finished book,
+          we bring experienced publishing professionals
+          together around work worth doing well.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="#contact"
+            class="button"
+          >
+            Start Your Book
+            <span class="arrow">→</span>
+          </a>
+
+
+          <a
+            href="#publish"
+            class="text-link"
+          >
+            How we publish
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+      <div class="hero-image-caption">
+
+        <span>
+          Wynncrest Books
+        </span>
+
+        <span>
+          Publishing with purpose
+        </span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       POSITIONING
+  ========================================================== -->
+
+  <section class="positioning">
+
+    <div class="container positioning-inner">
+
+      <div class="positioning-item">
+        <strong>
+          Your ideas.
+        </strong>
+        <span>
+          Retain creative control
+        </span>
+      </div>
+
+
+      <div class="positioning-item">
+        <strong>
+          Your timeline.
+        </strong>
+        <span>
+          A more direct path to publication
+        </span>
+      </div>
+
+
+      <div class="positioning-item">
+        <strong>
+          Professional standards.
+        </strong>
+        <span>
+          Experienced publishing teams
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       INTRODUCTION
+  ========================================================== -->
+
+  <section
+    class="intro"
+    id="about"
+  >
+
+    <div class="container intro-grid">
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          Wynncrest Books
+        </div>
+
+        <h2 class="section-title">
+          A different way to bring a book into the world.
+        </h2>
+
+      </div>
+
+
+      <div class="intro-text reveal">
+
+        <p class="section-copy">
+
+          Publishing a serious book shouldn't require
+          surrendering control of the idea, navigating
+          years of gatekeeping, or piecing together an
+          unfamiliar process alone.
+
+        </p>
+
+
+        <p class="section-copy">
+
+          Wynncrest provides an experienced publishing
+          partner from concept through publication.
+
+          We assemble the writers, editors, designers,
+          production specialists, and publishing
+          professionals a project needs—and manage the
+          process with the care the work deserves.
+
+        </p>
+
+
+        <p class="section-copy">
+
+          The result is not simply a published book.
+
+          It is a book created to represent its author,
+          its ideas, and its purpose exceptionally well.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       WHO WE SERVE
+  ========================================================== -->
+
+  <section class="audience">
+
+    <div class="container">
+
+      <div class="audience-head reveal">
+
+        <div>
+
+          <div class="eyebrow">
+            Who we serve
+          </div>
+
+          <h2 class="section-title">
+            For people with something worth saying.
+          </h2>
+
+        </div>
+
+
+        <div class="audience-copy">
+
+          <p class="section-copy">
+
+            Many of our authors have deep expertise,
+            compelling stories, or important ideas—but
+            neither the time nor the publishing
+            infrastructure to turn them into the book
+            they envision.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="audience-grid">
+
+
+        <div class="audience-card reveal">
+
+          <span class="audience-number">
+            01
+          </span>
+
+          <h3>
+            Founders & Executives
+          </h3>
+
+          <p>
+
+            Transform years of experience, leadership,
+            and insight into a book that extends your
+            authority and reaches far beyond your
+            immediate network.
+
+          </p>
+
+        </div>
+
+
+        <div class="audience-card reveal">
+
+          <span class="audience-number">
+            02
+          </span>
+
+          <h3>
+            Experts & Thought Leaders
+          </h3>
+
+          <p>
+
+            Turn specialized knowledge, a methodology,
+            or an important point of view into an
+            enduring piece of intellectual property.
+
+          </p>
+
+        </div>
+
+
+        <div class="audience-card reveal">
+
+          <span class="audience-number">
+            03
+          </span>
+
+          <h3>
+            Authors & Organizations
+          </h3>
+
+          <p>
+
+            Bring an existing manuscript, institutional
+            story, mission, or body of work to market
+            with professional editorial and production
+            support.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       IMAGE STATEMENT
+  ========================================================== -->
+
+  <section class="image-statement">
+
+    <div class="container image-statement-inner reveal">
+
+      <h2>
+        The freedom of independent publishing.
+        The standards of a great publishing house.
+      </h2>
+
+
+      <p>
+
+        Creative control and professional execution
+        should not be opposing ideas.
+
+        Wynncrest was built to provide both.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       WHY WYNNCREST
+  ========================================================== -->
+
+  <section class="difference">
+
+    <div class="container">
+
+      <div class="difference-head reveal">
+
+        <div class="eyebrow">
+          The Wynncrest difference
+        </div>
+
+        <h2 class="section-title">
+          Publishing built around the book—not the system.
+        </h2>
+
+      </div>
+
+
+      <div class="difference-list">
+
+
+        <div class="difference-row reveal">
+
+          <div class="difference-number">
+            01
+          </div>
+
+          <h3>
+            Control
+          </h3>
+
+          <p>
+
+            Your voice and ideas remain at the center of
+            the work. We provide expertise, perspective,
+            and execution without taking over the book
+            you set out to create.
+
+          </p>
+
+        </div>
+
+
+        <div class="difference-row reveal">
+
+          <div class="difference-number">
+            02
+          </div>
+
+          <h3>
+            Expertise
+          </h3>
+
+          <p>
+
+            Every book requires a different team.
+            Wynncrest draws on experienced writers,
+            editors, designers, and publishing
+            professionals selected for the needs of
+            each project.
+
+          </p>
+
+        </div>
+
+
+        <div class="difference-row reveal">
+
+          <div class="difference-number">
+            03
+          </div>
+
+          <h3>
+            Attention
+          </h3>
+
+          <p>
+
+            We intentionally maintain a high-touch
+            process. Authors understand where their
+            project stands, what comes next, and who is
+            responsible for getting it there.
+
+          </p>
+
+        </div>
+
+
+        <div class="difference-row reveal">
+
+          <div class="difference-number">
+            04
+          </div>
+
+          <h3>
+            Integrity
+          </h3>
+
+          <p>
+
+            We believe authors deserve clear expectations,
+            candid advice, and honest guidance.
+
+            We do not build projects around exaggerated
+            promises or unnecessary services.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       PROCESS
+  ========================================================== -->
+
+  <section
+    class="process"
+    id="publish"
+  >
+
+    <div class="container">
+
+      <div class="process-head reveal">
+
+        <div>
+
+          <div class="eyebrow">
+            How we publish
+          </div>
+
+          <h2 class="section-title">
+            One team. One process. From idea to finished book.
+          </h2>
+
+        </div>
+
+
+        <div class="process-copy">
+
+          Your project may begin with a finished
+          manuscript, a rough outline, years of
+          expertise, or simply the conviction that
+          there is a book you need to write.
+
+          We meet the project where it is.
+
+        </div>
+
+      </div>
+
+
+      <div class="process-grid">
+
+
+        <div class="process-step reveal">
+
+          <span class="process-number">
+            01
+          </span>
+
+          <h3>
+            Develop
+          </h3>
+
+          <p>
+
+            Clarify the concept, audience,
+            positioning, structure, and purpose
+            of the book.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-step reveal">
+
+          <span class="process-number">
+            02
+          </span>
+
+          <h3>
+            Create
+          </h3>
+
+          <p>
+
+            Write, ghostwrite, edit, or refine
+            the manuscript with an experienced
+            editorial team.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-step reveal">
+
+          <span class="process-number">
+            03
+          </span>
+
+          <h3>
+            Produce
+          </h3>
+
+          <p>
+
+            Design the cover and interior,
+            prepare production files, and create
+            a finished book to professional
+            standards.
+
+          </p>
+
+        </div>
+
+
+        <div class="process-step reveal">
+
+          <span class="process-number">
+            04
+          </span>
+
+          <h3>
+            Publish
+          </h3>
+
+          <p>
+
+            Bring the book to market with the
+            publishing, distribution, launch,
+            and marketing support appropriate
+            to the project.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       SERVICES
+  ========================================================== -->
+
+  <section class="services">
+
+    <div class="container services-layout">
+
+
+      <div class="services-copy reveal">
+
+        <div class="eyebrow">
+          Publishing services
+        </div>
+
+        <h2 class="section-title">
+          Built around what your book needs.
+        </h2>
+
+        <p class="section-copy">
+
+          Some authors arrive with a completed
+          manuscript.
+
+          Others arrive with an idea and years of
+          knowledge.
+
+          Wynncrest can step in at either point—and
+          anywhere between.
+
+        </p>
+
+      </div>
+
+
+      <div class="services-list reveal">
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Book Strategy & Development
+            </h3>
+
+            <span>01</span>
+
+          </div>
+
+          <p>
+
+            Concept development, positioning,
+            audience definition, structure,
+            outlines, and book planning.
+
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Ghostwriting
+            </h3>
+
+            <span>02</span>
+
+          </div>
+
+          <p>
+
+            Collaborative book creation for
+            authors whose expertise, experience,
+            or story needs to be transformed into
+            a finished manuscript.
+
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Editorial
+            </h3>
+
+            <span>03</span>
+
+          </div>
+
+          <p>
+
+            Developmental editing, manuscript
+            evaluation, line editing, copyediting,
+            and editorial refinement.
+
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Design & Production
+            </h3>
+
+            <span>04</span>
+
+          </div>
+
+          <p>
+
+            Cover design, interior design,
+            typesetting, production preparation,
+            and quality control.
+
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Publishing & Distribution
+            </h3>
+
+            <span>05</span>
+
+          </div>
+
+          <p>
+
+            Publishing infrastructure, metadata,
+            ISBN support, print and digital
+            production, and distribution.
+
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <div class="service-head">
+
+            <h3>
+              Launch & Marketing
+            </h3>
+
+            <span>06</span>
+
+          </div>
+
+          <p>
+
+            Strategic support designed around
+            the author, audience, business,
+            and long-term role of the book.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       MISSION / BOOKS
+  ========================================================== -->
+
+  <section
+    class="mission"
+    id="books"
+  >
+
+    <div class="container mission-grid">
+
+
+      <div class="mission-image">
+      </div>
+
+
+      <div class="mission-copy reveal">
+
+        <div class="eyebrow">
+          What we publish
+        </div>
+
+        <h2 class="section-title">
+          Books that deserve a place in the world.
+        </h2>
+
+        <p class="section-copy">
+
+          Wynncrest is drawn to books that illuminate
+          meaningful ideas and human experiences:
+          work about growth, leadership, hope,
+          connection, understanding, and positive
+          change.
+
+        </p>
+
+
+        <p class="section-copy">
+
+          We want the books we publish to leave
+          something useful behind—to teach, connect,
+          challenge, encourage, or help another
+          person see the world differently.
+
+        </p>
+
+
+        <div class="mission-quote">
+
+          We believe publishing is not simply
+          about producing more books.
+
+          It is about helping the right books
+          exist.
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       EXPERIENCE
+  ========================================================== -->
+
+  <section class="experience">
+
+    <div class="container experience-grid">
+
+
+      <div class="experience-item reveal">
+
+        <strong>
+          20+
+        </strong>
+
+        <h3>
+          Years in publishing
+        </h3>
+
+        <p>
+
+          Our work is informed by more than two
+          decades of experience across publishing,
+          writing, editorial, production, and
+          author services.
+
+        </p>
+
+      </div>
+
+
+      <div class="experience-item reveal">
+
+        <strong>
+          High-touch
+        </strong>
+
+        <h3>
+          By design
+        </h3>
+
+        <p>
+
+          We build teams around projects rather
+          than pushing every author through the
+          same standardized process.
+
+        </p>
+
+      </div>
+
+
+      <div class="experience-item reveal">
+
+        <strong>
+          Quality
+        </strong>
+
+        <h3>
+          Without shortcuts
+        </h3>
+
+        <p>
+
+          Every stage of the book is approached
+          with the same goal: create something
+          worthy of the ideas behind it.
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FINAL CTA
+  ========================================================== -->
+
+  <section
+    class="final-cta"
+    id="contact"
+  >
+
+    <div class="container reveal">
+
+      <div class="eyebrow">
+        Start your project
+      </div>
+
+      <h2>
+        There may already be a book inside the work you've done.
+      </h2>
+
+      <p>
+
+        Tell us what you're thinking about creating,
+        where you are in the process, and what you
+        hope the finished book will accomplish.
+
+      </p>
+
+      <!--
+        TEMPORARY:
+        Replace the email below with your actual
+        Wynncrest inquiry email.
+
+        Later this button can link to:
+        /publish/
+        or an application form.
+      -->
+
+      <a
+        href="mailto:hello@wynncrestbooks.com"
+        class="button button-light"
+      >
+        Start the Conversation
+        <span class="arrow">→</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+        <div>
+
+          <div class="footer-brand">
+            Wynncrest Books
+          </div>
+
+          <div class="footer-tag">
+            Independent Publishing
+          </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#publish">
+            Publish With Us
+          </a>
+
+          <a href="#books">
+            Our Books
+          </a>
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <div>
+          ©
+          <span id="year"></span>
+          Wynncrest Books.
+          All rights reserved.
+        </div>
+
+        <div>
+          wynncrestbooks.com
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script>
+
+    /* ---------------------------------------------------------
+       CURRENT YEAR
+    ---------------------------------------------------------- */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* ---------------------------------------------------------
+       MOBILE MENU
+    ---------------------------------------------------------- */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle("open");
+
+      }
+    );
+
+
+    navLinks
+      .querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove("open");
+
+          }
+        );
+
+      });
+
+
+    /* ---------------------------------------------------------
+       SCROLL REVEAL
+    ---------------------------------------------------------- */
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target
+                  .classList
+                  .add("visible");
+
+                observer
+                  .unobserve(
+                    entry.target
+                  );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.10
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(
+        element =>
+          observer.observe(element)
+      );
+
+  </script>
+
+
+</body>
+</html>
