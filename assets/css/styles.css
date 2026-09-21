@@ -1996,3 +1996,190 @@
       }
 
     }
+
+
+/* =========================================================
+   INNER PAGES
+========================================================== */
+
+.page-main {
+  padding-top: 96px;
+}
+
+.page-hero {
+  padding: 120px 0 105px;
+  background: var(--cream);
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 110px;
+  align-items: end;
+}
+
+.page-hero .eyebrow {
+  margin-bottom: 22px;
+}
+
+.page-hero-copy {
+  max-width: 620px;
+}
+
+.page-hero-copy p {
+  margin-top: 26px;
+}
+
+.content-section {
+  padding: 130px 0;
+}
+
+.content-section.alt {
+  background: var(--cream-light);
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 110px;
+  align-items: start;
+}
+
+.content-grid.reverse {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.content-copy p + p {
+  margin-top: 22px;
+}
+
+.founder-photo {
+  min-height: 610px;
+  background-color: var(--paper);
+  background-size: cover;
+  background-position: center;
+}
+
+.founder-card {
+  max-width: 580px;
+}
+
+.founder-card h2 {
+  margin-top: 18px;
+}
+
+.founder-meta {
+  margin-top: 16px;
+  color: var(--gold-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.value-list {
+  border-top: 1px solid var(--line);
+}
+
+.value-row {
+  display: grid;
+  grid-template-columns: 70px 0.8fr 1.2fr;
+  gap: 45px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.value-row .number {
+  color: var(--gold-dark);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+}
+
+.value-row h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.value-row p {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.books-intro {
+  max-width: 760px;
+}
+
+.books-placeholder {
+  margin-top: 70px;
+  padding: 70px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.books-placeholder h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.books-placeholder p {
+  align-self: end;
+  max-width: 560px;
+}
+
+.small-cta {
+  margin-top: 28px;
+}
+
+@media (max-width: 1000px) {
+  .page-hero-grid,
+  .content-grid,
+  .content-grid.reverse,
+  .books-placeholder {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .founder-photo {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-main {
+    padding-top: 78px;
+  }
+
+  .page-hero {
+    padding: 90px 0 75px;
+  }
+
+  .content-section {
+    padding: 90px 0;
+  }
+
+  .value-row {
+    grid-template-columns: 38px 1fr;
+    gap: 18px;
+  }
+
+  .value-row p {
+    grid-column: 2;
+  }
+
+  .founder-photo {
+    min-height: 430px;
+  }
+
+  .books-placeholder {
+    margin-top: 50px;
+    padding: 50px 0;
+  }
+}
