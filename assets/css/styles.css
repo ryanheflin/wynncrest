@@ -276,13 +276,15 @@
 
       width: auto;
 
-      height: 64px;
+      height: 66px;
 
-      max-width: 275px;
+      max-width: 285px;
 
       object-fit: contain;
 
       background: transparent;
+
+      mix-blend-mode: multiply;
     }
 
 
@@ -1640,13 +1642,16 @@
       .logo img {
 
         height:
-          50px;
+          52px;
 
         max-width:
-          215px;
+          225px;
 
         background:
           transparent;
+
+        mix-blend-mode:
+          multiply;
       }
 
 
