@@ -12,7 +12,6 @@
   <url><loc>https://wynncrestbooks.com/publishing-distribution/</loc></url>
   <url><loc>https://wynncrestbooks.com/founders-executives/</loc></url>
   <url><loc>https://wynncrestbooks.com/guide/</loc></url>
-  <url><loc>https://wynncrestbooks.com/bulk-orders/</loc></url>
   <url><loc>https://wynncrestbooks.com/referrals/</loc></url>
   <url><loc>https://wynncrestbooks.com/contact/</loc></url>
   {% assign sorted_articles = site.articles | sort: "date" | reverse %}
