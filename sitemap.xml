@@ -1,10 +1,27 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://wynncrestbooks.com/</loc></url>
   <url><loc>https://wynncrestbooks.com/about/</loc></url>
   <url><loc>https://wynncrestbooks.com/books/</loc></url>
   <url><loc>https://wynncrestbooks.com/publish/</loc></url>
+  <url><loc>https://wynncrestbooks.com/book-development/</loc></url>
+  <url><loc>https://wynncrestbooks.com/ghostwriting/</loc></url>
+  <url><loc>https://wynncrestbooks.com/editing-production/</loc></url>
+  <url><loc>https://wynncrestbooks.com/publishing-distribution/</loc></url>
+  <url><loc>https://wynncrestbooks.com/founders-executives/</loc></url>
+  <url><loc>https://wynncrestbooks.com/guide/</loc></url>
   <url><loc>https://wynncrestbooks.com/bulk-orders/</loc></url>
   <url><loc>https://wynncrestbooks.com/referrals/</loc></url>
   <url><loc>https://wynncrestbooks.com/contact/</loc></url>
+  {% assign sorted_articles = site.articles | sort: "date" | reverse %}
+  {% for article in sorted_articles %}
+  {% unless article.published == false %}
+  <url>
+    <loc>{{ site.url }}{{ article.url }}</loc>
+    <lastmod>{{ article.modified | default: article.date | date_to_xmlschema }}</lastmod>
+  </url>
+  {% endunless %}
+  {% endfor %}
 </urlset>
