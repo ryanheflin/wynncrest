@@ -103,4 +103,4 @@ A useful first conversation can start with:
 
 From there, the next step is usually development: turning the idea into a book that has a clear purpose, structure, and path forward.
 
-If that is where your project is today, [Wynncrest can start with the idea](/publish/#application/).
+If that is where your project is today, [Wynncrest can start with the idea](/publish/#application).
