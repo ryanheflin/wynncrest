@@ -1,0 +1,139 @@
+---
+layout: null
+title: Wynncrest Guide to Publishing
+description: Practical guidance on developing, writing, editing, producing, publishing, and using a professional book.
+permalink: /guide/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Analytics consent defaults -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('wynncrest_analytics_consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (error) {}
+  </script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDQSSKPZ');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wynncrest Guide to Publishing | Practical Advice for Authors</title>
+  <meta name="description" content="The Wynncrest Guide to Publishing offers practical guidance on book ideas, ghostwriting, editing, independent publishing, production, distribution, and author strategy." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://wynncrestbooks.com/guide/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wynncrest Books" />
+  <meta property="og:title" content="Wynncrest Guide to Publishing" />
+  <meta property="og:description" content="Practical guidance for authors from first idea through publication." />
+  <meta property="og:url" content="https://wynncrestbooks.com/guide/" />
+  <meta property="og:image" content="https://wynncrestbooks.com/assets/images/wynncrest-books.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQSSKPZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <section class="page-hero guide-hero">
+      <div class="container page-hero-grid reveal">
+        <div>
+          <div class="eyebrow">Wynncrest Guide to Publishing</div>
+          <h1>Clear answers for the long road from <em>idea to book.</em></h1>
+        </div>
+        <div class="page-hero-copy">
+          Publishing can feel complicated because it combines creative decisions, business decisions, and a long chain of specialized work. This guide explains the process in plain language so authors can make better decisions about writing, editing, publishing, distribution, and the role a book can play in their work.
+        </div>
+      </div>
+    </section>
+
+    {% assign featured_articles = site.articles | where: "featured", true | sort: "date" | reverse %}
+    {% if featured_articles.size > 0 %}
+    <section class="page-section page-section-cream">
+      <div class="container">
+        <div class="section-intro reveal">
+          <div>
+            <div class="eyebrow">Start here</div>
+            <h2 class="section-title">The questions authors ask first.</h2>
+          </div>
+          <div class="section-intro-copy section-copy">
+            These are good starting points if you know you want to create a serious book but are not yet sure what kind of help you need or which publishing path fits.
+          </div>
+        </div>
+        <div class="guide-grid">
+          {% for article in featured_articles limit:3 %}
+          <article class="guide-card reveal">
+            <div class="guide-card-meta">{{ article.category }} · {{ article.date | date: "%b %Y" }}</div>
+            <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            <p>{{ article.description }}</p>
+            <a class="text-link" href="{{ article.url }}">Read the guide →</a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-intro reveal">
+          <div>
+            <div class="eyebrow">All articles</div>
+            <h2 class="section-title">Build your publishing knowledge.</h2>
+          </div>
+          <div class="section-intro-copy section-copy">
+            New articles are added here automatically when they are published in the Wynncrest article collection.
+          </div>
+        </div>
+
+        {% assign sorted_articles = site.articles | sort: "date" | reverse %}
+        <div class="guide-list">
+          {% for article in sorted_articles %}
+          <article class="guide-list-item reveal">
+            <div>
+              <div class="guide-card-meta">{{ article.category }} · {{ article.date | date: "%B %-d, %Y" }}</div>
+              <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+            </div>
+            <p>{{ article.description }}</p>
+            <a class="text-link" href="{{ article.url }}">Read →</a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container reveal">
+        <div class="small-kicker">When advice becomes a project</div>
+        <h2>Ready to turn the idea into a book?</h2>
+        <p>Wynncrest can build the team and publishing process around where your project is today.</p>
+        <a class="button button-light" href="/publish/#application">Start Your Project <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
