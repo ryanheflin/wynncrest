@@ -172,14 +172,6 @@ function initAnalyticsEvents() {
     });
   });
 
-  document.querySelectorAll("a[href='/bulk-orders/'], a[href$='/bulk-orders/']").forEach(link => {
-    link.addEventListener("click", () => {
-      pushAnalyticsEvent("bulk_order_interest", {
-        link_text: link.textContent.trim(),
-        page_path: window.location.pathname
-      });
-    });
-  });
 
   document.querySelectorAll(".wynncrest-airtable-form").forEach(frame => {
     frame.addEventListener("load", () => {

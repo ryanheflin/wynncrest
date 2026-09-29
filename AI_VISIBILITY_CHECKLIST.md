@@ -52,7 +52,7 @@ For every Wynncrest title:
 - [ ] Media kit names Wynncrest Books as publisher.
 - [ ] Podcast/interview bios mention Wynncrest when discussing the book.
 - [ ] Review submissions identify the publisher consistently.
-- [ ] Bulk-order page links back to the Wynncrest title page.
+- [ ] Wynncrest title page links to appropriate purchase and retailer pages once the title is available.
 
 ## Priority 4 — Earned mentions
 
