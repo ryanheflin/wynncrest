@@ -42,6 +42,30 @@
   <meta property="og:url" content="https://wynncrestbooks.com/about/" />
   <meta property="og:image" content="https://wynncrestbooks.com/assets/images/wynncrest-books.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://wynncrestbooks.com/#organization",
+        "name":"Wynncrest Books",
+        "url":"https://wynncrestbooks.com/",
+        "logo":"https://wynncrestbooks.com/assets/images/wynncrest-logo.png",
+        "parentOrganization":{"@type":"Organization","name":"Heflin Media Group"},
+        "founder":{"@id":"https://wynncrestbooks.com/about/#liz-heflin"}
+      },
+      {
+        "@type":"Person",
+        "@id":"https://wynncrestbooks.com/about/#liz-heflin",
+        "name":"Liz Heflin",
+        "jobTitle":"Founder",
+        "worksFor":{"@id":"https://wynncrestbooks.com/#organization"},
+        "url":"https://wynncrestbooks.com/about/"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
