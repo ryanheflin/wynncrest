@@ -1,0 +1,20 @@
+url: "https://wynncrestbooks.com"
+title: "Wynncrest Books"
+description: "Independent publishing, book development, ghostwriting, editorial, production, and distribution for founders, executives, experts, authors, and organizations."
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article
+      author: "Wynncrest Books Editorial Team"
+      image: "/assets/images/wynncrest-books.png"
+
+exclude:
+  - README.md

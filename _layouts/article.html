@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Analytics consent defaults -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('wynncrest_analytics_consent') === 'granted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (error) {}
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDQSSKPZ');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | Wynncrest Guide to Publishing</title>
+  <meta name="description" content="{{ page.description | escape }}" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Wynncrest Books" />
+  <meta property="og:title" content="{{ page.title | escape }}" />
+  <meta property="og:description" content="{{ page.description | escape }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ page.image | default: '/assets/images/wynncrest-books.png' }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.modified | default: page.date | date_to_xmlschema }}",
+    "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+    "author": {
+      "@type": "Organization",
+      "name": {{ page.author | default: "Wynncrest Books Editorial Team" | jsonify }},
+      "url": "{{ site.url }}/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Wynncrest Books",
+      "url": "{{ site.url }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/images/wynncrest-logo.png"
+      }
+    },
+    "image": "{{ site.url }}{{ page.image | default: '/assets/images/wynncrest-books.png' }}"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQSSKPZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <article>
+      <header class="article-hero">
+        <div class="container article-hero-inner">
+          <div class="eyebrow">Wynncrest Guide to Publishing{% if page.category %} · {{ page.category }}{% endif %}</div>
+          <h1>{{ page.title }}</h1>
+          <p class="article-deck">{{ page.description }}</p>
+          <div class="article-meta">
+            <span>{{ page.author | default: "Wynncrest Books Editorial Team" }}</span>
+            <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container article-shell">
+        <div class="article-content">
+          {{ content }}
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="eyebrow">Wynncrest Books</div>
+          <h2>Thinking about a book of your own?</h2>
+          <p>Wynncrest works with authors from the first idea through manuscript development, production, publishing, and distribution.</p>
+          <a class="button" href="/publish/#application">Start Your Project <span class="arrow">→</span></a>
+          <a class="text-link article-back-link" href="/guide/">← Back to the Guide</a>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
