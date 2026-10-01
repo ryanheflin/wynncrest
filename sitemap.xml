@@ -15,6 +15,7 @@
   <url><loc>https://wynncrestbooks.com/referrals/</loc></url>
   <url><loc>https://wynncrestbooks.com/contact/</loc></url>
   <url><loc>https://wynncrestbooks.com/standards/</loc></url>
+  <url><loc>https://wynncrestbooks.com/privacy/</loc></url>
   {% assign sorted_articles = site.articles | sort: "date" | reverse %}
   {% for article in sorted_articles %}
   {% unless article.published == false %}
