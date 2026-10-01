@@ -144,6 +144,15 @@ function initAnalyticsConsent() {
   banner.querySelector(".analytics-consent-decline")?.addEventListener("click", () => saveChoice("denied"));
 }
 
+function initCookieSettings() {
+  document.querySelectorAll("[data-cookie-settings]").forEach(button => {
+    button.addEventListener("click", () => {
+      try { localStorage.removeItem("wynncrest_analytics_consent"); } catch (error) {}
+      window.location.reload();
+    });
+  });
+}
+
 function initAnalyticsEvents() {
   document.querySelectorAll("a[href^='mailto:']").forEach(link => {
     link.addEventListener("click", () => {
@@ -203,5 +212,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   initReveal();
   initEmailForms();
   initAnalyticsConsent();
+  initCookieSettings();
   initAnalyticsEvents();
 });
