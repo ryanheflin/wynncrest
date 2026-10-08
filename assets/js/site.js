@@ -1,3 +1,11 @@
+// Shared browser-tab icon sourced from the Wynncrest logo emblem.
+(function addWynncrestFavicon(){
+  if (document.querySelector('link[rel="icon"]')) return;
+  const icon=document.createElement("link");
+  icon.rel="icon"; icon.type="image/svg+xml"; icon.href="/assets/images/wynncrest-favicon.svg";
+  document.head.appendChild(icon);
+})();
+
 async function loadComponent(selector, path) {
   const target = document.querySelector(selector);
   if (!target) return;
