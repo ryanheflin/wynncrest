@@ -3113,3 +3113,17 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+
+/* Heflin Media Group relationship — distinct visual identity retained */
+.brand-bridge{background:#eae5dc;border-top:1px solid rgba(69,58,43,.14);border-bottom:1px solid rgba(69,58,43,.14);padding:76px 0}
+.brand-bridge-inner{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.75fr);gap:clamp(30px,7vw,110px);align-items:center}
+.brand-bridge h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.2rem,4vw,3.5rem);line-height:1.12;font-weight:500;margin:12px 0 22px;color:#272a22}
+.brand-bridge p{max-width:690px;color:#46483f;line-height:1.85}
+.brand-bridge a{color:#4d563d;text-decoration:underline;text-underline-offset:3px}
+.brand-bridge-link{display:inline-block;font-size:.85rem;font-weight:600;margin-top:18px}
+.brand-bridge-aside{border-left:1px solid #b5b0a5;padding:24px 0 24px 28px;display:flex;flex-direction:column;gap:8px;color:#323a32}
+.brand-bridge-aside strong{letter-spacing:.11em;font-size:.77rem}
+.brand-bridge-aside span{font-size:.85rem;line-height:1.5}
+.brand-bridge-aside hr{height:1px;width:100%;background:#c1bbae;border:0;margin:17px 0}
+@media(max-width:760px){.brand-bridge{padding:55px 0}.brand-bridge-inner{grid-template-columns:1fr}.brand-bridge-aside{padding:20px;border-left:0;border-top:1px solid #b5b0a5}}
